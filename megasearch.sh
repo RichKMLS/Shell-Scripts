@@ -11,7 +11,7 @@
 # 3. Enter the directory to search in when prompted (leave blank to search the entire filesystem).
 #
 # Example:
-# $ ./search.sh
+# $ ./megasearch.sh
 # Search term: *.txt
 # Directory to search in: /home/user/documents
 #
