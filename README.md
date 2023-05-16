@@ -1,2 +1,2 @@
 # Shell-Scripts
-Helpful scripts that serve specific functions.
+Short helpful scripts that serve specific functions.
