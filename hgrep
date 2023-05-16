@@ -5,8 +5,14 @@
 
 # The first command line argument is accessed with $1
 search_term=$1
-echo $search_term
-# The history command is used to display the command history
+
+# Set the HISTFILE environment variable to specify the location of the history file
+HISTFILE=~/.bash_history
+
+# Use the history -r command to read the contents of the history file
+history -r
+
+# Use the history command to display the command history
 # The output is then piped to the grep command
 # which searches for lines that contain the search term
 history | grep $search_term
