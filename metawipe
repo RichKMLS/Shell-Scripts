@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This script takes a single command line argument
+# and uses exiftool to remove all metadata from the specified file.
+
+# The first command line argument is accessed with $1
+file=$1
+
+# The exiftool command is used with the -all= option
+# to remove all metadata from the specified file
+exiftool -all= $file
