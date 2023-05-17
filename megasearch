@@ -26,6 +26,7 @@ if [ -z "$searchDir" ]; then
     searchDir="/"
 fi
 
-find $searchDir -iname $searchTerm -print0 2>/dev/null | \
-	xargs -0 ls -lt --time-style=long-iso | awk '{print $6,$7,$8,$9}'
+find $searchDir -iname "$searchTerm" -type f -print0 2>/dev/null | \
+        xargs -0 ls -lt --time-style=long-iso | awk '{print $6,$7,$8,$9}'
+
 
