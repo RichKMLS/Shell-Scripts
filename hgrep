@@ -1,18 +1,26 @@
 #!/bin/bash
+# github.com/richkmls
+# Quickly find a previous command that you executed in the bash shell
+#
+# This script searches the bash history file for a given term
+# Usage: ./search_history.sh [term]
+# If no term is provided, the script will prompt the user for input
 
-# This script takes a single command line argument
-# and searches the command history for entries that match the argument.
+# Check if the user has provided a command line argument
+if [ -z "$1" ]; then
+  # If not, prompt the user for a search term
+  echo -n "Please enter a search term: "
+  read search_term
+else
+  # If yes, assign it to the search_term variable
+  search_term=$1
+fi
 
-# The first command line argument is accessed with $1
-search_term=$1
-
-# Set the HISTFILE environment variable to specify the location of the history file
+# Set the history file path
 HISTFILE=~/.bash_history
 
-# Use the history -r command to read the contents of the history file
+# Read the history file
 history -r
 
-# Use the history command to display the command history
-# The output is then piped to the grep command
-# which searches for lines that contain the search term
+# Search the history file for the search term
 history | grep $search_term
